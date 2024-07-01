@@ -19,8 +19,7 @@ const analyticBehaviour = (req, res, next) => {
     };
 
     // Override the send method
-    res.on( 'finish', (body) => {
-        console.log(body);
+    res.on( 'finish', () => {
         // Check if the response status is successful
         if (res.statusMessage === "OK") {
             // Log request data asynchronously
